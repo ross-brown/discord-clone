@@ -34,6 +34,12 @@ const formSchema = z.object({
   })
 });
 
+/**
+ * Modal used for users to create a server during initial setup.
+ *
+ * Uses React Hook Form for form handling.
+ */
+
 function InitialModal() {
   const [isMounted, setIsMounted] = useState(false);
 
