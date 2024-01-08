@@ -2,6 +2,7 @@ import { auth } from "@clerk/nextjs";
 
 import { db } from "@/lib/db";
 
+/** checks if someone is logged in and returns their profile */
 export const currentProfile = async () => {
   const { userId } = auth();
 
