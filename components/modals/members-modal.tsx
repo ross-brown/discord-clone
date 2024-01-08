@@ -50,7 +50,7 @@ function MembersModal() {
   const isModalOpen = isOpen && type === "members";
   const { server } = data as { server: ServerWithMemebersWithProfiles; };
 
-  const memeberCount = server?.members.length;
+  const memeberCount = server?.members ? server.members.length : 0;
 
   async function onKick(memberId: string) {
     try {
