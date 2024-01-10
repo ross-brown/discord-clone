@@ -23,11 +23,9 @@ export const useChatScroll = ({
     function handleScroll() {
       const scrollTop = topDiv?.scrollTop;
       if (scrollTop === 0 && shouldLoadMore) loadMore();
-      console.log("scrollTop, shouldLoadMore", scrollTop, shouldLoadMore);
     }
 
     topDiv?.addEventListener("scroll", handleScroll);
-    console.log("Top added event listner");
 
     return () => {
       topDiv?.removeEventListener("scroll", handleScroll);

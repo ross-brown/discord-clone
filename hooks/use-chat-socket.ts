@@ -41,6 +41,7 @@ export const useChatSocket = ({
             })
           };
         });
+        
         return {
           ...oldData,
           pages: newData
