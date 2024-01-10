@@ -14,7 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponseS
   try {
     const profile = await currentProfilePages(req);
     const { messageId, serverId, channelId } = req.query;
-    const content = req.method === "PATCH" ? JSON.parse(req.body.content) : undefined;
+    const content = req.method === "PATCH" ? JSON.parse(req.body).content : undefined;
 
     if (!profile) return res.status(401).json({ message: "Unauthorized" });
     if (!serverId) return res.status(400).json({ message: "Server ID missing" });
