@@ -5,6 +5,7 @@ import { NextResponse } from "next/server";
 
 const MESSAGES_BATCH = 10;
 
+/** Handles GET requests to retrieve a batch of chat messages. */
 export async function GET(req: Request) {
   try {
     const profile = await currentProfile();

@@ -10,6 +10,14 @@ interface ChatQueryProps {
   paramValue: string;
 }
 
+/** Custom hook for managing and fetching chat messages using the useInfiniteQuery hook.
+ *
+ * useInfiniteQuery:
+ * (facilitates the management and retrieval of paginated data
+ *  by providing functionality for fetching multiple pages of query results)
+ *
+ * Returns { data, fetchNextPage, hasNextPage, isFetchingNextPage, status }
+ */
 export const useChatQuery = ({ queryKey, apiUrl, paramKey, paramValue }: ChatQueryProps) => {
   const { isConnected } = useSocket();
 
