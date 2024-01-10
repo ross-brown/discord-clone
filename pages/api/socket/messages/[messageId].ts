@@ -4,6 +4,8 @@ import { NextApiResponseServerIo } from "@/types";
 import { MemberRole } from "@prisma/client";
 import { NextApiRequest } from "next";
 
+
+/** API handler for editing and deleting chat messages */
 export default async function handler(req: NextApiRequest, res: NextApiResponseServerIo) {
   if (req.method !== "DELETE" && req.method !== "PATCH") {
     return res.status(405).json({ error: "Method not allowed" });
@@ -12,7 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponseS
   try {
     const profile = await currentProfilePages(req);
     const { messageId, serverId, channelId } = req.query;
-    const { content } = JSON.parse(req.body);
+    const content = req.method === "PATCH" ? JSON.parse(req.body.content) : undefined;
 
     if (!profile) return res.status(401).json({ message: "Unauthorized" });
     if (!serverId) return res.status(400).json({ message: "Server ID missing" });
