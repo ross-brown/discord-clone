@@ -32,7 +32,7 @@ const formSchema = z.object({
 });
 
 /**
- * Modal used for users to create a server during initial setup.
+ * Modal used for users to attach files to a message.
  *
  * Uses React Hook Form for form handling.
  */
