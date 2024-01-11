@@ -13,7 +13,11 @@ interface InviteCodePageProps {
 async function InviteCodePage({ params }: InviteCodePageProps) {
   const profile = await currentProfile();
 
-  if (!profile) return redirectToSignIn();
+  if (!profile) {
+    console.log('Redirecting to Sign in');
+    return redirectToSignIn();
+  }
+  
   if (!params.inviteCode) return redirect("/");
 
   const existingServer = await db.server.findFirst({

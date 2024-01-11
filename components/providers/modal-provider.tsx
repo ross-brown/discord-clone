@@ -13,6 +13,7 @@ import DeleteChannelModal from "@/components/modals/delete-channel-modal";
 import EditChannelModal from "@/components/modals/edit-channel-modal";
 import MessageFileModal from "@/components/modals/message-file-modal";
 import DeleteMessageModal from "@/components/modals/delete-message-modal";
+import ViewImageModal from "@/components/modals/view-image-modal";
 
 export function ModalProvider() {
   const [isMounted, setIsMounted] = useState(false);
@@ -36,6 +37,7 @@ export function ModalProvider() {
       <EditChannelModal />
       <MessageFileModal />
       <DeleteMessageModal />
+      <ViewImageModal />
     </>
   );
 }

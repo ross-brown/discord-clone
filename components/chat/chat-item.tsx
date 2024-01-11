@@ -141,11 +141,9 @@ function ChatItem({
             </span>
           </div>
           {isImage && (
-            <a
-              href={fileUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative aspect-square rounded-md mt-2 overflow-hidden border flex items-center bg-secondary h-48 w-48"
+            <div
+              className="relative aspect-square rounded-md mt-2 overflow-hidden border flex items-center bg-secondary h-48 w-48 cursor-pointer"
+              onClick={() => onOpen("viewImage", { fileUrl })}
             >
               <Image
                 src={fileUrl}
@@ -153,7 +151,7 @@ function ChatItem({
                 fill
                 className="object-cover"
               />
-            </a>
+            </div>
           )}
           {isPDF && (
             <div className="relative flex items-center p-2 mt-2 rounded-md bg-background/10">

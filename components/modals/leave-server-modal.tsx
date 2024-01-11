@@ -17,9 +17,7 @@ import { Server } from "@prisma/client";
 import { useRouter } from "next/navigation";
 
 /**
- * Modal used for users to create a server.
- *
- * Uses React Hook Form for form handling.
+ * Modal used for users to leave a server.
  */
 
 function LeaveServerModal() {
