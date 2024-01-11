@@ -44,6 +44,7 @@ function NavigationItem({ id, imageUrl, name }: NavigationItemProps) {
             fill
             src={imageUrl}
             alt="Server"
+            className="object-cover"
           />
         </div>
       </button>
