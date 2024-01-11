@@ -14,10 +14,11 @@ async function InviteCodePage({ params }: InviteCodePageProps) {
   const profile = await currentProfile();
 
   if (!profile) {
-    console.log('Redirecting to Sign in');
-    return redirectToSignIn();
+    console.log('Redirecting to Sign in, [CURRENT USING REDIRECT("/sign-in")]');
+    return redirect("/sign-in");
+    // return redirectToSignIn();
   }
-  
+
   if (!params.inviteCode) return redirect("/");
 
   const existingServer = await db.server.findFirst({
