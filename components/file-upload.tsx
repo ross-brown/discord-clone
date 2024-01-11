@@ -2,6 +2,7 @@
 
 import { FileIcon, X } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 import { UploadDropzone } from "@/lib/uploadthing";
 
@@ -15,6 +16,8 @@ interface FileUploadProps {
 }
 
 function FileUpload({ onChange, endpoint, value }: FileUploadProps) {
+  const [error, setError] = useState("");
+
   const fileType = value?.split(".").pop();
 
   if (value && fileType !== "pdf") {
@@ -61,15 +64,21 @@ function FileUpload({ onChange, endpoint, value }: FileUploadProps) {
   }
 
   return (
-    <UploadDropzone
-      endpoint={endpoint}
-      onClientUploadComplete={(res) => {
-        onChange(res?.[0].url);
-      }}
-      onUploadError={(error: Error) => {
-        console.log(error);
-      }}
-    />
+    <>
+      <UploadDropzone
+        endpoint={endpoint}
+        onClientUploadComplete={(res) => {
+          onChange(res?.[0].url);
+        }}
+        onUploadError={(error: Error) => {
+          console.log("File Upload Error: ", error);
+          setError(error.message);
+        }}
+      />
+      <p className="text-sm font-semibold text-rose-600 dark:text-rose-500">
+        {error}
+      </p>
+    </>
   );
 }
 
