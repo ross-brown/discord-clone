@@ -70,7 +70,7 @@ function ChatInput({ apiUrl, query, name, type }: ChatInputProps) {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <div className="relative p-4 pb-6">
+                <div className="relative p-4 pb-6 flex gap-x-2 items-center">
                   <button
                     type="button"
                     onClick={() => onOpen("messageFile", { apiUrl, query })}
@@ -84,19 +84,19 @@ function ChatInput({ apiUrl, query, name, type }: ChatInputProps) {
                     placeholder={`Message ${type === "conversation" ? name : "#" + name}`}
                     {...field}
                   />
-                  <div className="absolute md:top-7 md:right-8 top-5 right-5">
-                    <div className="flex items-center justify-center gap-x-4">
-                      <EmojiPicker
-                        onChange={(emoji: string) => field.onChange(`${field.value} ${emoji}`)}
-                      />
-                      <Button
-                        type="submit"
-                        variant="primary"
-                        className="md:hidden">
-                        Send
-                      </Button>
-                    </div>
+                  <div className="absolute top-7 md:right-8 right-32">
+                    <EmojiPicker
+                      onChange={(emoji: string) => field.onChange(`${field.value} ${emoji}`)}
+                    />
                   </div>
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    className="md:hidden"
+                    size="lg"
+                  >
+                    Send
+                  </Button>
                 </div>
               </FormControl>
             </FormItem>
