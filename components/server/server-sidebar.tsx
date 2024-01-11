@@ -1,6 +1,6 @@
 import { ChannelType, MemberRole } from "@prisma/client";
 import { redirect } from "next/navigation";
-import { Crown, Hash, ShieldCheck, Video, Volume2 } from "lucide-react";
+import { Crown, Hash, Sword, Video, Volume2 } from "lucide-react";
 
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
@@ -25,7 +25,7 @@ const iconMap = {
 
 const roleIconMap = {
   [MemberRole.GUEST]: null,
-  [MemberRole.MODERATOR]: <ShieldCheck className="h-4 w-4 mr-2 text-indigo-500" />,
+  [MemberRole.MODERATOR]: <Sword className="h-4 w-4 mr-2 text-emerald-500" />,
   [MemberRole.ADMIN]: <Crown className="h-4 w-4 mr-2 text-amber-400" />
 };
 

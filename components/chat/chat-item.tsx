@@ -5,7 +5,7 @@ import qs from "query-string";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Member, MemberRole, Profile } from "@prisma/client";
-import { Edit, FileIcon, Crown, ShieldCheck, Trash, Sword } from "lucide-react";
+import { Edit, FileIcon, Crown, Trash, Sword } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 

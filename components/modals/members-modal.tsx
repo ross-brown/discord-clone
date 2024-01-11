@@ -3,7 +3,7 @@
 import qs from "query-string";
 import { useState } from "react";
 
-import { Check, Crown, Gavel, Loader2, MoreVertical, Shield, ShieldCheck, ShieldQuestion } from "lucide-react";
+import { Check, Crown, Gavel, Loader2, MoreVertical, Shield, ShieldQuestion, Sword } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -32,7 +32,7 @@ import { useRouter } from "next/navigation";
 
 const roleIconMap = {
   "GUEST": null,
-  "MODERATOR": <ShieldCheck className="h-4 w-4 ml-2 text-indigo-500" />,
+  "MODERATOR": <Sword className="h-4 w-4 ml-2 text-emerald-500" />,
   "ADMIN": <Crown className="h-4 w-4 text-amber-500" />
 };
 
@@ -154,7 +154,7 @@ function MembersModal() {
                             <DropdownMenuItem
                               onClick={() => onRoleChange(member.id, "MODERATOR")}
                             >
-                              <ShieldCheck className="h-4 w-4 mr-2" />
+                              <Sword className="h-4 w-4 mr-2" />
                               Moderator
                               {member.role === "MODERATOR" && (
                                 <Check className="h-4 w-4 ml-auto" />
